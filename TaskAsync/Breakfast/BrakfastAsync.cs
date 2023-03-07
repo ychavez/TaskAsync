@@ -8,6 +8,21 @@ namespace TaskAsync.Breakfast
 {
     public static class BrakfastAsync
     {
+        public static async Task MilCoffee()
+        {
+            List<Task> tareas = new();
+
+            for (int i = 0; i < 1_000_000; i++)
+            {
+                tareas.Add(Coffee());
+            }
+
+            await Task.WhenAll(tareas);
+
+            Console.WriteLine("Se ejecutaron todos los cafes");
+        }
+
+
         public static async Task DoBreakfast()
         {
             var coffeTask = Coffee();
@@ -35,7 +50,7 @@ namespace TaskAsync.Breakfast
         public static async Task Coffee()
         {
             await Task.Delay(1000);
-            Console.WriteLine("Cofee");
+           // Console.WriteLine("Cofee");
         }
         public static async Task HeatPan()
         {

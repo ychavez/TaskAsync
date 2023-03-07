@@ -11,7 +11,7 @@ internal class Program
         timmer.Start();
         // Classic.DoBreakfast();
 
-      await BrakfastAsync.DoBreakfast();
+        await BrakfastAsync.MilCoffee();
         timmer.Stop();
 
         Console.WriteLine($"Pasaron {timmer.Elapsed}");
